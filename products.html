@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rubberstamp Catalogue - Products</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <h1>🛍️ Available Products</h1>
+<a href="index.html">Home</a>
+    <div class="products">
+      <div class="product">
+        <img src="stamp3.jpg" alt="Round Stamp" />
+        <h3>Date Stamp</h3>
+        <p>Price: $20</p>
+        <textarea id="msg1"placeholder="Enter text for this stamp..." class=
+        "message-box"></textarea>
+        <button onclick="addToCart('Date Stamp', 20)" class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="stamp11.jpg" alt="Date Stamp" />
+        <h3>Self Inking Date Stamp</h3>
+        <p>Price: $55</p>
+        <textarea
+          id="msg1"
+          placeholder="Enter text for this stamp..." class=
+        "message-box"
+        ></textarea>
+        <button onclick="addToCart('Date Stamp', 55)" class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="stamp.jpg" alt="Date Stamp" />
+        <h3>Self lnking Stamp</h3>
+        <p>Price: $25</p>
+        <textarea
+          id="msg1"
+          placeholder="Enter text for this stamp..." class=
+        "message-box"
+        ></textarea>
+        <button onclick="addToCart('Date Stamp', 25)" class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="stamp2.jpg" alt="Stamp Pad" />
+        <h3>Stamp Pad</h3>
+        <p>Price: $3</p>
+        <button onclick="addToCart('Stamp Pad', 3)" class="add-to-cart">Add to Cart</button>
+      </div>
+ <div class="product">
+        <img src="stamp4.jpg" alt=" DateStamp " />
+        <h3>Date Stamp</h3>
+        <p>Price: $20</p>
+        <textarea id="msg1"placeholder="Enter text for this stamp..." class=
+        "message-box" ></textarea>
+        <button onclick="addToCart('Date Stamp', 20)" class="add-to-cart">Add to Cart</button>
+      </div>
+<div class="product">
+        <img src="stamp5.jpg" alt="Seal" />
+        <h3>Seal</h3>
+        <p>Price: $75</p>
+        <textarea id="msg1"placeholder="Enter text for this stamp..." class=
+        "message-box"></textarea>
+        <button onclick="addToCart('Seal', 75)" class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="stamp6.jpg" alt="Seal" />
+        <h3>Stamp Pad</h3>
+        <p>Price: $3</p>
+        <button onclick="addToCart('Stamp Pad', 3)" class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="stamp7.jpg" alt="Seal" />
+        <h3> Hand Stamp</h3>
+        <p>Price: $15</p>
+        <textarea id="msg1"placeholder="Enter text for this stamp..." class=
+        "message-box"></textarea>
+        <button onclick="addToCart('Hand Stamp', 15)" class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="stamp8.jpg" alt="Seal" />
+        <h3>Self Inking Stamp(No Date)</h3>
+        <p>Price: $75</p>
+        <textarea id="msg1"placeholder="Enter text for this stamp..." class=
+        "message-box"></textarea>
+        <button onclick="addToCart('Seal', 75)" class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h2>🛒 Cart</h2>
+      <ul id="cart-items"></ul>
+      <p>
+        <strong>Total: $<span id="cart-total">0</span></strong>
+      </p>
+    </div>
+
+    <script>
+      let cart = [];
+      let total = 0;
+
+      function addToCart(name, price) {
+        cart.push({ name, price });
+        total += price;
+        renderCart();
+      }
+
+      function renderCart() {
+        const cartList = document.getElementById("cart-items");
+        cartList.innerHTML = "";
+        cart.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.name} - $${item.price}`;
+          cartList.appendChild(li);
+        });
+        document.getElementById("cart-total").textContent = total;
+      }
+    </script>
+  </body>
+</html>
